@@ -5,6 +5,9 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
 
+
+ 
+
 int main() {
     // Definicão das variaveis so sistema: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     char estado[20];
@@ -14,6 +17,8 @@ int main() {
     float area_km;
     float pib;   
     int numero_ponto_turistico;
+    float densidade_populacional;
+    float pib_per_capita;
 
     // Recebendo a entrada do usuarios com as informacoes de cada estado.
     printf("Informe o nome do estado: \n");
@@ -25,11 +30,12 @@ int main() {
     printf("Informe o numero da populacao: \n");
     scanf("%d", &populacao);
     printf("Informe o a area em km quadrado: \n");
-    scanf("%.2f", &area_km);
+    scanf("%f", &area_km);
     printf("Informe o pib do estado: \n");
-    scanf("%.2f", &pib);
+    scanf("%f", &pib);
     printf("Informe o numero de pontos turisticos do estado: \n");
     scanf("%d", &numero_ponto_turistico);
+
 
     // Exibindo os dados informados pelo usuarios
     printf("Nome do estado: %s\n", estado);
@@ -39,6 +45,16 @@ int main() {
     printf("Area em km: %f\n", area_km);
     printf("PIB: %f\n", pib);
     printf("Numero de pontos turisticos: %d\n");
+
+    printf("++++++++ ========== ++++++++\n");
+
+    // Calcular a Densidade Populacional:
+    densidade_populacional = populacao / area_km;
+    // Calcular o PIB per Capita
+    pib_per_capita = pib / populacao;
+
+    printf("Densidade Populacional: %f\n", densidade_populacional);
+    printf("PIB per Capita: %f\n", pib_per_capita);
 
     return 0;
 }
